@@ -1,0 +1,12 @@
+.film-selector{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: #1287a1;
+
+  select {
+    font-size: larger;
+    height: 50px;
+  }
+}

@@ -1,0 +1,11 @@
+<section class="opening-crawl">
+  <app-film-selector [films$]="films$" (selectFilm)="UpdateSelectedFilm($event)" ></app-film-selector>
+</section>
+<ng-container *ngIf="films$ | async; let filmView">
+  <div class="films" *ngFor="let film of filmView">
+    <div class="film-crawler" *ngIf="film.episode_id == selectedFilm">
+      <p class="film-title">{{film.title}}</p>
+      <p *ngFor="let paragraph of BrakeParagraphs(film.opening_crawl)">{{paragraph + "."}}</p>
+    </div>
+  </div>
+</ng-container>

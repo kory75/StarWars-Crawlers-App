@@ -1,0 +1,8 @@
+<article class="film-selector">
+  <select id="contactMethod"
+          class="form-control"
+          (change)="ChangeFilm(selectedFilm)"
+          [(ngModel)]="selectedFilm">
+    <option *ngFor="let film of films$ | async" [value]="film.episode_id">{{film.title}}</option>
+  </select>
+</article>
